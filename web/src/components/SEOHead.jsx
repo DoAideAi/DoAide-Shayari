@@ -10,7 +10,7 @@ export default function SEOHead({ title, description, url, jsonLd }) {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="DoAide Shayari" />
+      <meta property="og:site_name" content="DoAide | Shayari" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />

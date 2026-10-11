@@ -56,7 +56,7 @@ export default function CategoryPage() {
         url={`/category/${category}${subcategory ? `?subcategory=${subcategory}` : ''}`}
       />
 
-      <section className="bg-gradient-to-br from-gray-700 to-gray-900 text-white py-8 sm:py-12 px-4">
+      <section className="bg-gradient-to-br from-primary-700 to-primary-500 text-white py-8 sm:py-12 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <nav className="text-sm text-white/70 mb-3">
             <Link to="/" className="hover:text-white">होम</Link>
@@ -93,7 +93,7 @@ export default function CategoryPage() {
               <Link
                 key={key}
                 to={`/category/festival?subcategory=${key}`}
-                className="px-3 py-1.5 rounded-full text-sm bg-saffron-50 text-saffron-700 hover:bg-saffron-100 transition-colors"
+                className="px-3 py-1.5 rounded-full text-sm bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors"
               >
                 {val}
               </Link>
@@ -113,7 +113,7 @@ export default function CategoryPage() {
               ))}
             </div>
             {data?.items?.length === 0 && (
-              <p className="text-center text-gray-500 py-8 font-hindi">कोई कंटेंट नहीं मिला।</p>
+              <p className="text-center text-[var(--da-text-secondary)] py-8 font-hindi">कोई कंटेंट नहीं मिला।</p>
             )}
             {data && (
               <Pagination page={page} pages={data.pages} onPageChange={setPage} />

@@ -27,8 +27,8 @@ export default function ContentDetailPage() {
   if (isLoading) return <LoadingSpinner />;
   if (!item) return (
     <div className="max-w-4xl mx-auto px-4 py-16 text-center">
-      <p className="text-gray-500 font-hindi text-lg">कंटेंट नहीं मिला</p>
-      <Link to="/" className="text-primary-600 hover:underline mt-4 inline-block">होम पेज पर जाएं</Link>
+      <p className="text-[var(--da-text-secondary)] font-hindi text-lg">कंटेंट नहीं मिला</p>
+      <Link to="/" className="text-primary-500 hover:underline mt-4 inline-block">होम पेज पर जाएं</Link>
     </div>
   );
 
@@ -50,10 +50,10 @@ export default function ContentDetailPage() {
       />
 
       <section className="max-w-2xl mx-auto px-4 py-8 sm:py-12">
-        <nav className="text-sm text-gray-500 mb-6">
-          <Link to="/" className="hover:text-primary-600">होम</Link>
+        <nav className="text-sm text-[var(--da-text-secondary)] mb-6">
+          <Link to="/" className="hover:text-primary-500">होम</Link>
           <span className="mx-2">›</span>
-          <Link to={`/category/${item.category}`} className="hover:text-primary-600">{item.category}</Link>
+          <Link to={`/category/${item.category}`} className="hover:text-primary-500">{item.category}</Link>
         </nav>
         <ContentCard item={item} showLink={false} />
       </section>

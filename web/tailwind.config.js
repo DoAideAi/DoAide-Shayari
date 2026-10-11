@@ -1,26 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: {
-          50: '#fef2f2', 100: '#fee2e2', 200: '#fecaca', 300: '#fca5a5',
-          400: '#f87171', 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c',
-          800: '#991b1b', 900: '#7f1d1d',
+          50: '#F0FDFA', 100: '#CCFBF1', 200: '#99F6E4', 300: '#5EEAD4',
+          400: '#2DD4BF', 500: '#0D9488', 600: '#0F766E', 700: '#115E59',
+          800: '#134E4A', 900: '#042F2E',
         },
-        saffron: {
-          50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74',
-          400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c',
-        },
-        emerald: {
-          50: '#ecfdf5', 100: '#d1fae5', 200: '#a7f3d0', 300: '#6ee7b7',
-          400: '#34d399', 500: '#10b981', 600: '#059669', 700: '#047857',
+        da: {
+          primary: '#0D9488',
+          'primary-hover': '#0F766E',
+          bg: '#FFFFFF',
+          surface: '#F8FFFE',
+          text: '#1E293B',
         },
       },
       fontFamily: {
         hindi: ['Noto Sans Devanagari', 'sans-serif'],
-        display: ['Poppins', 'sans-serif'],
+        display: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'Noto Sans Devanagari', 'sans-serif'],
       },
     },
   },

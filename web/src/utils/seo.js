@@ -8,8 +8,8 @@ export function collectionPageJsonLd({ name, description, url, items = [] }) {
     inLanguage: ['hi', 'en'],
     publisher: {
       '@type': 'Organization',
-      name: 'DoAide',
-      url: 'https://doaide.com',
+      name: 'DoAide | Shayari',
+      url: 'https://shayari.doaide.com',
     },
     mainEntity: {
       '@type': 'ItemList',

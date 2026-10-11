@@ -77,7 +77,7 @@ export default function SEOLandingPage({ slug }) {
         jsonLd={jsonLd}
       />
 
-      <section className="bg-gradient-to-br from-primary-500 to-saffron-500 text-white py-10 sm:py-14 px-4">
+      <section className="bg-gradient-to-br from-primary-600 to-primary-400 text-white py-10 sm:py-14 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <nav className="text-sm text-white/80 mb-4">
             <Link to="/" className="hover:text-white">होम</Link>
@@ -92,8 +92,8 @@ export default function SEOLandingPage({ slug }) {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
-        <h2 className="font-hindi text-lg sm:text-xl font-bold text-gray-800 mb-6">
-          आज के ताज़ा संदेश <span className="text-gray-500 font-normal text-sm">| Today&apos;s Fresh Messages</span>
+        <h2 className="font-hindi text-lg sm:text-xl font-bold text-[var(--da-text)] mb-6">
+          आज के ताज़ा संदेश <span className="text-[var(--da-text-secondary)] font-normal text-sm">| Today&apos;s Fresh Messages</span>
         </h2>
 
         {isLoading ? (
@@ -112,9 +112,9 @@ export default function SEOLandingPage({ slug }) {
         )}
 
         {related.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <h2 className="font-hindi text-lg font-bold text-gray-800 mb-4">
-              और भी देखें <span className="text-gray-500 font-normal text-sm">| See More</span>
+          <div className="mt-12 pt-8 border-t border-[var(--da-border)]">
+            <h2 className="font-hindi text-lg font-bold text-[var(--da-text)] mb-4">
+              और भी देखें <span className="text-[var(--da-text-secondary)] font-normal text-sm">| See More</span>
             </h2>
             <div className="flex flex-wrap gap-3">
               {related.map(({ to, label }) => (

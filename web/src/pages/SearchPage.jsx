@@ -24,16 +24,16 @@ export default function SearchPage() {
         url={`/search${q ? `?q=${encodeURIComponent(q)}` : ''}`}
       />
 
-      <section className="bg-gray-100 py-8 px-4">
+      <section className="bg-[var(--da-surface)] py-8 px-4">
         <div className="max-w-2xl mx-auto">
-          <h1 className="font-hindi text-xl font-bold text-gray-800 mb-4 text-center">खोजें</h1>
+          <h1 className="font-hindi text-xl font-bold text-[var(--da-text)] mb-4 text-center">खोजें</h1>
           <SearchBar />
         </div>
       </section>
 
       <section className="max-w-4xl mx-auto px-4 py-8">
         {q && (
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="text-sm text-[var(--da-text-secondary)] mb-4">
             &quot;{q}&quot; के लिए {data?.total || 0} नतीजे
           </p>
         )}
@@ -48,7 +48,7 @@ export default function SearchPage() {
               ))}
             </div>
             {data?.items?.length === 0 && q && (
-              <p className="text-center text-gray-500 py-8 font-hindi">कोई नतीजा नहीं मिला। कुछ और खोजें।</p>
+              <p className="text-center text-[var(--da-text-secondary)] py-8 font-hindi">कोई नतीजा नहीं मिला। कुछ और खोजें।</p>
             )}
             {data && (
               <Pagination page={page} pages={Math.ceil((data.total || 0) / 20)} onPageChange={setPage} />

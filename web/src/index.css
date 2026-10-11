@@ -1,15 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --da-primary: #0D9488;
+  --da-primary-hover: #0F766E;
+  --da-bg: #FFFFFF;
+  --da-surface: #F8FFFE;
+  --da-text: #1E293B;
+  --da-text-secondary: #64748B;
+  --da-border: #E2E8F0;
+  --da-footer-bg: #0F172A;
+  --da-footer-text: #94A3B8;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --da-bg: #0F172A;
+    --da-surface: #1E293B;
+    --da-text: #F1F5F9;
+    --da-text-secondary: #94A3B8;
+    --da-border: #334155;
+    --da-footer-bg: #020617;
+    --da-footer-text: #64748B;
+  }
+}
+
+:root[data-theme="dark"] {
+  --da-bg: #0F172A;
+  --da-surface: #1E293B;
+  --da-text: #F1F5F9;
+  --da-text-secondary: #94A3B8;
+  --da-border: #334155;
+  --da-footer-bg: #020617;
+  --da-footer-text: #64748B;
+}
+
 body {
-  font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
+  font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0;
+  background-color: var(--da-bg);
+  color: var(--da-text);
 }
 
 .font-hindi {
   font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.dark .bg-white {
+  background-color: var(--da-surface);
 }

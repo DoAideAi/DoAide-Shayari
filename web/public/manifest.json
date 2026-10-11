@@ -1,11 +1,11 @@
 {
-  "name": "DoAide Shayari - हिंदी शायरी और शुभकामनाएं",
+  "name": "DoAide | Shayari - हिंदी शायरी और शुभकामनाएं",
   "short_name": "DoAide Shayari",
   "description": "हिंदी शायरी, गुड मॉर्निंग मैसेज, लव कोट्स और शुभकामनाएं",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ef4444",
+  "background_color": "#F8FFFE",
+  "theme_color": "#0D9488",
   "icons": [
     {
       "src": "/icon-192.png",

@@ -11,12 +11,12 @@ export default function HomePage() {
   return (
     <>
       <SEOHead
-        title="DoAide Shayari - हिंदी शायरी, गुड मॉर्निंग मैसेज, लव कोट्स और शुभकामनाएं"
+        title="DoAide | Shayari - हिंदी शायरी, गुड मॉर्निंग मैसेज, लव कोट्स और शुभकामनाएं"
         description="बेहतरीन हिंदी शायरी, गुड मॉर्निंग इमेज, गुड नाइट मैसेज, लव कोट्स, बर्थडे विशेज। कॉपी करें और WhatsApp पर शेयर करें।"
         url="/"
       />
 
-      <section className="bg-gradient-to-br from-saffron-500 via-primary-500 to-emerald-600 text-white py-12 sm:py-16 px-4">
+      <section className="bg-gradient-to-br from-primary-600 via-primary-500 to-teal-400 text-white py-12 sm:py-16 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3">
             <span className="font-hindi">हिंदी शायरी और शुभकामनाएं</span>
@@ -29,8 +29,8 @@ export default function HomePage() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
-        <h2 className="font-hindi text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center">
-          कैटेगरी चुनें <span className="text-gray-500 font-normal text-base">| Browse Categories</span>
+        <h2 className="font-hindi text-xl sm:text-2xl font-bold text-[var(--da-text)] mb-6 text-center">
+          कैटेगरी चुनें <span className="text-[var(--da-text-secondary)] font-normal text-base">| Browse Categories</span>
         </h2>
         <CategoryGrid />
       </section>
@@ -39,8 +39,8 @@ export default function HomePage() {
         <LoadingSpinner />
       ) : daily && (
         <section className="max-w-4xl mx-auto px-4 pb-12">
-          <h2 className="font-hindi text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center">
-            आज की ताज़ा शायरी <span className="text-gray-500 font-normal text-base">| Today&apos;s Fresh Content</span>
+          <h2 className="font-hindi text-xl sm:text-2xl font-bold text-[var(--da-text)] mb-6 text-center">
+            आज की ताज़ा शायरी <span className="text-[var(--da-text-secondary)] font-normal text-base">| Today&apos;s Fresh Content</span>
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {Object.values(daily).flat().slice(0, 6).map((item) => (

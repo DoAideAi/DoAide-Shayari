@@ -19,25 +19,25 @@ export default function ContentCard({ item, showLink = true }) {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+    <div className="bg-[var(--da-bg)] rounded-2xl shadow-lg border border-[var(--da-border)] overflow-hidden hover:shadow-xl transition-shadow">
       <div className="p-5 sm:p-6">
-        <p className="font-hindi text-lg sm:text-xl text-gray-800 leading-relaxed whitespace-pre-line mb-3">
+        <p className="font-hindi text-lg sm:text-xl text-[var(--da-text)] leading-relaxed whitespace-pre-line mb-3">
           {item.text_hindi}
         </p>
-        <p className="text-sm text-gray-500 italic whitespace-pre-line mb-4">
+        <p className="text-sm text-[var(--da-text-secondary)] italic whitespace-pre-line mb-4">
           {item.text_transliteration}
         </p>
         {item.author && (
-          <p className="text-xs text-gray-400 mb-3">— {item.author}</p>
+          <p className="text-xs text-[var(--da-text-secondary)] mb-3">— {item.author}</p>
         )}
         <div className="flex items-center gap-2 flex-wrap">
           <button
             onClick={handleCopy}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium bg-[var(--da-surface)] text-[var(--da-text)] hover:bg-primary-50 hover:text-primary-700 transition-colors border border-[var(--da-border)]"
           >
             {copied ? (
               <>
-                <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                <svg className="w-4 h-4 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                 कॉपी हो गया!
               </>
             ) : (
@@ -57,7 +57,7 @@ export default function ContentCard({ item, showLink = true }) {
           {showLink && item.id && (
             <Link
               to={`/content/${item.id}`}
-              className="inline-flex items-center gap-1 px-3 py-2 rounded-full text-sm text-gray-500 hover:text-primary-600 hover:bg-primary-50 transition-colors"
+              className="inline-flex items-center gap-1 px-3 py-2 rounded-full text-sm text-[var(--da-text-secondary)] hover:text-primary-500 hover:bg-primary-50 transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </Link>

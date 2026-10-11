@@ -69,7 +69,7 @@ export default function GeneratePage() {
         url="/generate"
       />
 
-      <section className="bg-gradient-to-br from-violet-500 to-fuchsia-500 text-white py-10 sm:py-14 px-4">
+      <section className="bg-gradient-to-br from-primary-600 to-teal-400 text-white py-10 sm:py-14 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">
             <span className="font-hindi">✨ AI शायरी जनरेटर</span>
@@ -79,13 +79,13 @@ export default function GeneratePage() {
       </section>
 
       <section className="max-w-xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-2xl shadow-lg p-6 space-y-4">
+        <div className="bg-[var(--da-bg)] rounded-2xl shadow-lg p-6 space-y-4 border border-[var(--da-border)]">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1 font-hindi">कैटेगरी चुनें</label>
+            <label className="block text-sm font-medium text-[var(--da-text)] mb-1 font-hindi">कैटेगरी चुनें</label>
             <select
               value={category}
               onChange={(e) => { setCategory(e.target.value); setSubcategory(''); }}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+              className="w-full px-4 py-2.5 rounded-xl border border-[var(--da-border)] bg-[var(--da-surface)] text-[var(--da-text)] focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             >
               {CATEGORIES.map((c) => (
                 <option key={c.value} value={c.value}>{c.label}</option>
@@ -95,11 +95,11 @@ export default function GeneratePage() {
 
           {subOptions.length > 0 && (
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1 font-hindi">उपश्रेणी (ऑप्शनल)</label>
+              <label className="block text-sm font-medium text-[var(--da-text)] mb-1 font-hindi">उपश्रेणी (ऑप्शनल)</label>
               <select
                 value={subcategory}
                 onChange={(e) => setSubcategory(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+                className="w-full px-4 py-2.5 rounded-xl border border-[var(--da-border)] bg-[var(--da-surface)] text-[var(--da-text)] focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               >
                 <option value="">— कोई भी —</option>
                 {subOptions.map((s) => (
@@ -110,20 +110,20 @@ export default function GeneratePage() {
           )}
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1 font-hindi">किसके लिए? (ऑप्शनल)</label>
+            <label className="block text-sm font-medium text-[var(--da-text)] mb-1 font-hindi">किसके लिए? (ऑप्शनल)</label>
             <input
               type="text"
               value={context}
               onChange={(e) => setContext(e.target.value)}
               placeholder="जैसे: बेस्ट फ्रेंड के लिए, पत्नी के लिए..."
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-violet-500 focus:border-transparent"
+              className="w-full px-4 py-2.5 rounded-xl border border-[var(--da-border)] bg-[var(--da-surface)] text-[var(--da-text)] placeholder-[var(--da-text-secondary)] focus:ring-2 focus:ring-primary-500 focus:border-transparent"
             />
           </div>
 
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full py-3 rounded-xl font-medium text-white bg-gradient-to-r from-violet-500 to-fuchsia-500 hover:from-violet-600 hover:to-fuchsia-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md"
+            className="w-full py-3 rounded-xl font-medium text-white bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md"
           >
             {loading ? (
               <span className="inline-flex items-center gap-2">
@@ -146,7 +146,7 @@ export default function GeneratePage() {
           </div>
         )}
 
-        <p className="text-xs text-gray-400 text-center mt-4">
+        <p className="text-xs text-[var(--da-text-secondary)] text-center mt-4">
           प्रति मिनट 10 अनुरोध की सीमा है। Rate limit: 10 requests/minute.
         </p>
       </section>
