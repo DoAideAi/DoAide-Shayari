@@ -60,6 +60,34 @@ def seed_if_empty(db: Session):
     db.commit()
 
 
+def import_scraped(db: Session):
+    """Add scraped items (seed_data/scraped_shayari.json) that aren't in the DB yet."""
+    path = os.path.join(os.path.dirname(__file__), "seed_data", "scraped_shayari.json")
+    if not os.path.exists(path):
+        return
+    with open(path, "r", encoding="utf-8") as f:
+        items = json.load(f)
+    existing = {row[0] for row in db.query(Content.text_hindi).all()}
+    added = 0
+    for item in items:
+        if item["text_hindi"] in existing:
+            continue
+        db.add(Content(
+            category=item["category"],
+            subcategory=item.get("subcategory"),
+            text_hindi=item["text_hindi"],
+            text_transliteration=item["text_transliteration"],
+            author=item.get("author"),
+            tags=item.get("tags"),
+            is_featured=False,
+        ))
+        existing.add(item["text_hindi"])
+        added += 1
+    db.commit()
+    if added:
+        print(f"Imported {added} scraped items.")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
@@ -67,6 +95,7 @@ async def lifespan(app: FastAPI):
     db = SessionLocal()
     try:
         seed_if_empty(db)
+        import_scraped(db)
     finally:
         db.close()
     yield
@@ -77,7 +106,7 @@ app = FastAPI(title="DoAide Shayari API", version="1.0.0", lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:3082",
+        "http://localhost:3088",
         "https://shayari.doaide.com",
     ],
     allow_credentials=True,
