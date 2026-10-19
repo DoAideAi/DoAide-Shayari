@@ -1,3 +1,4 @@
+import glob
 import os
 import time
 import hashlib
@@ -61,12 +62,11 @@ def seed_if_empty(db: Session):
 
 
 def import_scraped(db: Session):
-    """Add scraped items (seed_data/scraped_shayari.json) that aren't in the DB yet."""
-    path = os.path.join(os.path.dirname(__file__), "seed_data", "scraped_shayari.json")
-    if not os.path.exists(path):
-        return
-    with open(path, "r", encoding="utf-8") as f:
-        items = json.load(f)
+    """Add scraped items (seed_data/scraped_*.json) that aren't in the DB yet."""
+    items = []
+    for path in sorted(glob.glob(os.path.join(os.path.dirname(__file__), "seed_data", "scraped_*.json"))):
+        with open(path, "r", encoding="utf-8") as f:
+            items.extend(json.load(f))
     existing = {row[0] for row in db.query(Content.text_hindi).all()}
     added = 0
     for item in items:
