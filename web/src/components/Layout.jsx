@@ -3,10 +3,10 @@ import { useState } from 'react';
 
 const NAV_LINKS = [
   { to: '/hindi-shayari', label: 'शायरी' },
-  { to: '/good-morning-images', label: 'गुड मॉर्निंग' },
-  { to: '/good-night-images', label: 'गुड नाइट' },
-  { to: '/birthday-wishes', label: 'बर्थडे' },
-  { to: '/generate', label: '✨ AI Generator' },
+  { to: '/festivals', label: '🪔 त्योहार' },
+  { to: '/categories', label: '📚 कैटेगरी' },
+  { to: '/quote-card', label: '🖼️ कार्ड' },
+  { to: '/generate', label: '✨ AI' },
 ];
 
 const FOOTER_LINKS = [
@@ -19,7 +19,11 @@ const FOOTER_LINKS = [
   { to: '/good-night-images', label: 'गुड नाइट' },
   { to: '/birthday-wishes', label: 'बर्थडे विशेज' },
   { to: '/anniversary-wishes', label: 'एनिवर्सरी' },
-  { to: '/category/festival', label: 'त्योहार' },
+  { to: '/festivals', label: 'त्योहार' },
+  { to: '/occasion-generator', label: 'मैसेज जनरेटर' },
+  { to: '/quote-card', label: 'इमेज कार्ड' },
+  { to: '/categories', label: 'सभी कैटेगरी' },
+  { to: '/hindi-shayari-guide', label: 'शायरी गाइड' },
 ];
 
 const DOAIDE_PRODUCTS = [
@@ -80,7 +84,7 @@ export default function Layout({ children }) {
             <div>
               <h3 className="text-white font-semibold mb-3">शायरी</h3>
               <ul className="space-y-2 text-sm">
-                {FOOTER_LINKS.slice(0, 4).map(({ to, label }) => (
+                {FOOTER_LINKS.slice(0, 5).map(({ to, label }) => (
                   <li key={to}><Link to={to} className="hover:text-primary-400 transition-colors">{label}</Link></li>
                 ))}
               </ul>
@@ -88,14 +92,17 @@ export default function Layout({ children }) {
             <div>
               <h3 className="text-white font-semibold mb-3">शुभकामनाएं</h3>
               <ul className="space-y-2 text-sm">
-                {FOOTER_LINKS.slice(4).map(({ to, label }) => (
+                {FOOTER_LINKS.slice(5, 11).map(({ to, label }) => (
                   <li key={to}><Link to={to} className="hover:text-primary-400 transition-colors">{label}</Link></li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-white font-semibold mb-3">DoAide Products</h3>
+              <h3 className="text-white font-semibold mb-3">टूल्स और लिंक</h3>
               <ul className="space-y-2 text-sm">
+                {FOOTER_LINKS.slice(11).map(({ to, label }) => (
+                  <li key={to}><Link to={to} className="hover:text-primary-400 transition-colors">{label}</Link></li>
+                ))}
                 {DOAIDE_PRODUCTS.map(({ href, label }) => (
                   <li key={href}><a href={href} className="hover:text-primary-400 transition-colors">{label}</a></li>
                 ))}

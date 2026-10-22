@@ -8,6 +8,11 @@ const ContentDetailPage = lazy(() => import('./pages/ContentDetailPage'));
 const SearchPage = lazy(() => import('./pages/SearchPage'));
 const GeneratePage = lazy(() => import('./pages/GeneratePage'));
 const SEOLandingPage = lazy(() => import('./pages/SEOLandingPage'));
+const FestivalPage = lazy(() => import('./pages/FestivalPage'));
+const OccasionGeneratorPage = lazy(() => import('./pages/OccasionGeneratorPage'));
+const QuoteCardPage = lazy(() => import('./pages/QuoteCardPage'));
+const CategoriesPage = lazy(() => import('./pages/CategoriesPage'));
+const BlogShayariPage = lazy(() => import('./pages/BlogShayariPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 export default function App() {
@@ -25,6 +30,11 @@ export default function App() {
           <Route path="/motivational-shayari" element={<SEOLandingPage slug="motivational-shayari" />} />
           <Route path="/birthday-wishes" element={<SEOLandingPage slug="birthday-wishes" />} />
           <Route path="/anniversary-wishes" element={<SEOLandingPage slug="anniversary-wishes" />} />
+          <Route path="/festivals" element={<FestivalPage />} />
+          <Route path="/occasion-generator" element={<OccasionGeneratorPage />} />
+          <Route path="/quote-card" element={<QuoteCardPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/hindi-shayari-guide" element={<BlogShayariPage />} />
           <Route path="/category/:category" element={<CategoryPage />} />
           <Route path="/content/:id" element={<ContentDetailPage />} />
           <Route path="/search" element={<SearchPage />} />
