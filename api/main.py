@@ -24,6 +24,9 @@ rate_limit_store: dict[str, list[float]] = defaultdict(list)
 RATE_LIMIT = 10
 RATE_WINDOW = 60
 
+share_limit_store: dict[str, list[float]] = defaultdict(list)
+SHARE_LIMIT = 60
+
 
 def seed_if_empty(db: Session):
     count = db.query(Content).count()
@@ -88,9 +91,20 @@ def import_scraped(db: Session):
         print(f"Imported {added} scraped items.")
 
 
+def migrate_share_count():
+    """Existing DBs predate the share_count column; create_all won't add it."""
+    from sqlalchemy import text
+    with engine.connect() as conn:
+        cols = [row[1] for row in conn.execute(text("PRAGMA table_info(content)"))]
+        if cols and "share_count" not in cols:
+            conn.execute(text("ALTER TABLE content ADD COLUMN share_count INTEGER NOT NULL DEFAULT 0"))
+            conn.commit()
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     Base.metadata.create_all(bind=engine)
+    migrate_share_count()
     from database import SessionLocal
     db = SessionLocal()
     try:
@@ -249,6 +263,58 @@ async def get_single_content(category: str, content_id: int, db: Session = Depen
         "author": item.author,
         "tags": item.tags,
         "is_featured": item.is_featured,
+    }
+
+
+@app.post("/api/content/{content_id}/share")
+async def track_share(content_id: int, request: Request, db: Session = Depends(get_db)):
+    """Count a copy/share tap so the trending list reflects what people actually send."""
+    ip = get_client_ip(request)
+    now = time.time()
+    share_limit_store[ip] = [t for t in share_limit_store[ip] if now - t < RATE_WINDOW]
+    if len(share_limit_store[ip]) >= SHARE_LIMIT:
+        raise HTTPException(status_code=429, detail="Too many requests")
+    share_limit_store[ip].append(now)
+    item = db.query(Content).filter(Content.id == content_id).first()
+    if not item:
+        raise HTTPException(status_code=404, detail="Content not found")
+    item.share_count = (item.share_count or 0) + 1
+    db.commit()
+    return {"id": item.id, "share_count": item.share_count}
+
+
+@app.get("/api/trending")
+async def trending(limit: int = Query(12, ge=1, le=50), db: Session = Depends(get_db)):
+    items = (
+        db.query(Content)
+        .filter(Content.share_count > 0)
+        .order_by(Content.share_count.desc(), Content.id.desc())
+        .limit(limit)
+        .all()
+    )
+    if len(items) < limit:
+        # Not enough share data yet: top up with a date-stable random pick so the section is never empty.
+        exclude = {i.id for i in items}
+        pool = [i for i in db.query(Content).filter(Content.is_featured.is_(True)).all() if i.id not in exclude]
+        if len(pool) < limit - len(items):
+            pool += [i for i in db.query(Content).limit(500).all() if i.id not in exclude and i not in pool]
+        random.seed(int(date.today().strftime("%Y%m%d")) + 7)
+        random.shuffle(pool)
+        random.seed()
+        items += pool[: limit - len(items)]
+    return {
+        "items": [
+            {
+                "id": item.id,
+                "category": item.category,
+                "subcategory": item.subcategory,
+                "text_hindi": item.text_hindi,
+                "text_transliteration": item.text_transliteration,
+                "author": item.author,
+                "share_count": item.share_count or 0,
+            }
+            for item in items
+        ]
     }
 
 

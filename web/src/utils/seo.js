@@ -65,6 +65,14 @@ export const SEO_DATA = {
     category: 'shayari',
     subcategory: 'sad',
   },
+  'motivational-shayari': {
+    title: 'Motivational Shayari in Hindi | मोटिवेशनल शायरी - जोश भरी शायरी - DoAide Shayari',
+    description: 'मोटिवेशनल शायरी, जोश और हौसला बढ़ाने वाली शायरी हिंदी में। Motivational Shayari, Inspirational Shayari in Hindi.',
+    h1: 'मोटिवेशनल शायरी - हौसला बढ़ाने वाली शायरी',
+    h1En: 'Motivational Shayari in Hindi',
+    category: 'shayari',
+    subcategory: 'motivational',
+  },
   'friendship-shayari': {
     title: 'Friendship Shayari in Hindi | दोस्ती शायरी - DoAide Shayari',
     description: 'दोस्ती शायरी, यारी शायरी हिंदी में। Friendship Shayari, Dosti Shayari in Hindi.',

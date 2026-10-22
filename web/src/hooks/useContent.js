@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchContent, fetchDaily, fetchCategories, searchContent, fetchSingleContent } from '../api/client';
+import { fetchContent, fetchDaily, fetchCategories, fetchTrending, searchContent, fetchSingleContent } from '../api/client';
 
 export function useContent(category, params = {}) {
   return useQuery({
@@ -13,6 +13,13 @@ export function useDaily() {
   return useQuery({
     queryKey: ['daily'],
     queryFn: fetchDaily,
+  });
+}
+
+export function useTrending(limit = 6) {
+  return useQuery({
+    queryKey: ['trending', limit],
+    queryFn: () => fetchTrending(limit),
   });
 }
 

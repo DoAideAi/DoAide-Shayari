@@ -37,6 +37,16 @@ export function searchContent(q, page = 1) {
   return request(`/api/search?q=${encodeURIComponent(q)}&page=${page}`);
 }
 
+export function fetchTrending(limit = 12) {
+  return request(`/api/trending?limit=${limit}`);
+}
+
+// Fire-and-forget: a lost beacon should never break the share itself.
+export function trackShare(id) {
+  if (!id) return;
+  request(`/api/content/${id}/share`, { method: 'POST' }).catch(() => {});
+}
+
 export function generateMessage(data) {
   return request('/api/generate', {
     method: 'POST',

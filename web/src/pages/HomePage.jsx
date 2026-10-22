@@ -3,10 +3,11 @@ import SearchBar from '../components/SearchBar';
 import CategoryGrid from '../components/CategoryGrid';
 import ContentCard from '../components/ContentCard';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { useDaily } from '../hooks/useContent';
+import { useDaily, useTrending } from '../hooks/useContent';
 
 export default function HomePage() {
   const { data: daily, isLoading } = useDaily();
+  const { data: trending } = useTrending(6);
 
   return (
     <>
@@ -34,6 +35,19 @@ export default function HomePage() {
         </h2>
         <CategoryGrid />
       </section>
+
+      {trending?.items?.length > 0 && (
+        <section className="max-w-4xl mx-auto px-4 pb-4">
+          <h2 className="font-hindi text-xl sm:text-2xl font-bold text-[var(--da-text)] mb-6 text-center">
+            🔥 ट्रेंडिंग शायरी <span className="text-[var(--da-text-secondary)] font-normal text-base">| Trending Now</span>
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {trending.items.slice(0, 6).map((item) => (
+              <ContentCard key={`trend-${item.id}`} item={item} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {isLoading ? (
         <LoadingSpinner />

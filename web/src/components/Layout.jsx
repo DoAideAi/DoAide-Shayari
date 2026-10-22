@@ -14,6 +14,7 @@ const FOOTER_LINKS = [
   { to: '/love-shayari', label: 'लव शायरी' },
   { to: '/sad-shayari', label: 'सैड शायरी' },
   { to: '/friendship-shayari', label: 'दोस्ती शायरी' },
+  { to: '/motivational-shayari', label: 'मोटिवेशनल शायरी' },
   { to: '/good-morning-images', label: 'गुड मॉर्निंग' },
   { to: '/good-night-images', label: 'गुड नाइट' },
   { to: '/birthday-wishes', label: 'बर्थडे विशेज' },

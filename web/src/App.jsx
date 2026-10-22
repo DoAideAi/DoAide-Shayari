@@ -22,6 +22,7 @@ export default function App() {
           <Route path="/love-shayari" element={<SEOLandingPage slug="love-shayari" />} />
           <Route path="/sad-shayari" element={<SEOLandingPage slug="sad-shayari" />} />
           <Route path="/friendship-shayari" element={<SEOLandingPage slug="friendship-shayari" />} />
+          <Route path="/motivational-shayari" element={<SEOLandingPage slug="motivational-shayari" />} />
           <Route path="/birthday-wishes" element={<SEOLandingPage slug="birthday-wishes" />} />
           <Route path="/anniversary-wishes" element={<SEOLandingPage slug="anniversary-wishes" />} />
           <Route path="/category/:category" element={<CategoryPage />} />

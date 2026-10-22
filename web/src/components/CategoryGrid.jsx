@@ -4,7 +4,7 @@ const CATEGORIES = [
   { to: '/love-shayari', emoji: '💖', label: 'लव शायरी', labelEn: 'Love Shayari', gradient: 'from-pink-500 to-rose-500' },
   { to: '/sad-shayari', emoji: '😢', label: 'सैड शायरी', labelEn: 'Sad Shayari', gradient: 'from-blue-500 to-indigo-500' },
   { to: '/friendship-shayari', emoji: '🤝', label: 'दोस्ती शायरी', labelEn: 'Friendship', gradient: 'from-teal-500 to-cyan-500' },
-  { to: '/category/shayari?subcategory=motivational', emoji: '💪', label: 'मोटिवेशनल', labelEn: 'Motivational', gradient: 'from-emerald-500 to-teal-500' },
+  { to: '/motivational-shayari', emoji: '💪', label: 'मोटिवेशनल', labelEn: 'Motivational', gradient: 'from-emerald-500 to-teal-500' },
   { to: '/category/shayari?subcategory=attitude', emoji: '😎', label: 'एटीट्यूड', labelEn: 'Attitude', gradient: 'from-purple-500 to-violet-500' },
   { to: '/category/shayari?subcategory=funny', emoji: '😄', label: 'फ़नी शायरी', labelEn: 'Funny', gradient: 'from-teal-400 to-emerald-500' },
   { to: '/good-morning-images', emoji: '🌅', label: 'गुड मॉर्निंग', labelEn: 'Good Morning', gradient: 'from-primary-500 to-primary-600' },

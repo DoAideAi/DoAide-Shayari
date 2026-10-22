@@ -15,3 +15,4 @@ class Content(Base):
     tags = Column(String, nullable=True)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
     is_featured = Column(Boolean, default=False)
+    share_count = Column(Integer, default=0, nullable=False, server_default="0")
