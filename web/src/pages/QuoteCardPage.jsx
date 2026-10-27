@@ -110,6 +110,7 @@ export default function QuoteCardPage() {
         title="Shayari Image Card Maker | शायरी इमेज कार्ड बनाएं - DoAide Shayari"
         description="अपनी शायरी को ख़ूबसूरत इमेज कार्ड में बदलें। ग्रेडिएंट बैकग्राउंड, हिंदी फ़ॉन्ट। डाउनलोड करें और WhatsApp/Instagram पर शेयर करें।"
         url="/quote-card"
+        jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Shayari Image Card Maker', description: 'शायरी इमेज कार्ड बनाएं — बैकग्राउंड, फॉन्ट चुनें और 1080x1080 इमेज डाउनलोड करें', url: 'https://shayari.doaide.com/quote-card', applicationCategory: 'UtilityApplication', operatingSystem: 'Web', inLanguage: ['hi', 'en'], publisher: { '@type': 'Organization', name: 'DoAide | Shayari', url: 'https://shayari.doaide.com' } }}
       />
 
       <section className="bg-gradient-to-br from-purple-600 to-pink-500 text-white py-10 sm:py-14 px-4">

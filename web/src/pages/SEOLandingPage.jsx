@@ -48,6 +48,11 @@ const RELATED = {
     { to: '/love-shayari', label: 'लव शायरी' },
     { to: '/good-morning-images', label: 'गुड मॉर्निंग' },
   ],
+  'motivational-shayari': [
+    { to: '/hindi-shayari', label: 'हिंदी शायरी' },
+    { to: '/friendship-shayari', label: 'दोस्ती शायरी' },
+    { to: '/love-shayari', label: 'लव शायरी' },
+  ],
 };
 
 export default function SEOLandingPage({ slug }) {

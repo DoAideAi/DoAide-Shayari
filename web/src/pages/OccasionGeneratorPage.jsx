@@ -105,6 +105,7 @@ export default function OccasionGeneratorPage() {
         title="Birthday & Anniversary Message Generator in Hindi | DoAide Shayari"
         description="जन्मदिन और सालगिरह के लिए हिंदी में ख़ास संदेश बनाएं — दोस्त, पत्नी, पति, माँ, पापा के लिए। कॉपी करें और WhatsApp पर शेयर करें।"
         url="/occasion-generator"
+        jsonLd={{ '@context': 'https://schema.org', '@type': 'WebApplication', name: 'Birthday & Anniversary Message Generator in Hindi', description: 'बर्थडे और एनिवर्सरी मैसेज जनरेटर', url: 'https://shayari.doaide.com/occasion-generator', applicationCategory: 'UtilityApplication', operatingSystem: 'Web', inLanguage: ['hi', 'en'], publisher: { '@type': 'Organization', name: 'DoAide | Shayari', url: 'https://shayari.doaide.com' } }}
       />
 
       <section className="bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600 text-white py-10 sm:py-14 px-4">

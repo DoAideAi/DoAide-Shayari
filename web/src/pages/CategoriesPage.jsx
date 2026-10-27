@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
+import { collectionPageJsonLd } from '../utils/seo';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { useCategories } from '../hooks/useContent';
 
@@ -79,6 +80,7 @@ export default function CategoriesPage() {
         title="सभी कैटेगरी | All Categories - DoAide Shayari"
         description="शायरी, गुड मॉर्निंग, गुड नाइट, बर्थडे, एनिवर्सरी, त्योहार — सभी कैटेगरी एक जगह। Browse all Hindi Shayari categories."
         url="/categories"
+        jsonLd={collectionPageJsonLd({ name: 'All Categories - DoAide Shayari', description: 'शायरी, शुभकामनाएं, त्योहार, बर्थडे विशेज — सभी कैटेगरी एक जगह', url: '/categories' })}
       />
 
       <section className="bg-gradient-to-br from-primary-600 via-primary-500 to-teal-400 text-white py-10 sm:py-14 px-4">

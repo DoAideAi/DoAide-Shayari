@@ -10,5 +10,10 @@
   <url><loc>https://shayari.doaide.com/motivational-shayari</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shayari.doaide.com/birthday-wishes</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shayari.doaide.com/anniversary-wishes</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shayari.doaide.com/festivals</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shayari.doaide.com/occasion-generator</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shayari.doaide.com/quote-card</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shayari.doaide.com/categories</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shayari.doaide.com/hindi-shayari-guide</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shayari.doaide.com/generate</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

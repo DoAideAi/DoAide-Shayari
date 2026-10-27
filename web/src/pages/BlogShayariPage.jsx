@@ -102,6 +102,7 @@ export default function BlogShayariPage() {
         title="Hindi Shayari Guide 2026 | हिंदी शायरी गाइड — Types, Festivals, WhatsApp Tips - DoAide Shayari"
         description="हिंदी शायरी की पूरी गाइड 2026: शायरी के प्रकार, त्योहारों की शुभकामनाएं, WhatsApp tips, इमेज कार्ड, AI generator। Complete Hindi Shayari guide."
         url="/hindi-shayari-guide"
+        jsonLd={{ '@context': 'https://schema.org', '@type': 'Article', headline: 'Hindi Shayari Guide 2026 | हिंदी शायरी गाइड', description: 'हिंदी शायरी की पूरी गाइड — शायरी क्या है, शायरी कैसे लिखें, शायरी के प्रकार', url: 'https://shayari.doaide.com/hindi-shayari-guide', inLanguage: ['hi', 'en'], publisher: { '@type': 'Organization', name: 'DoAide | Shayari', url: 'https://shayari.doaide.com' }, datePublished: '2025-01-01', dateModified: '2026-10-28' }}
       />
 
       <section className="bg-gradient-to-br from-primary-700 via-primary-500 to-teal-400 text-white py-12 sm:py-16 px-4">

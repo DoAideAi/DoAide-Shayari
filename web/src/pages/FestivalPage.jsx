@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SEOHead from '../components/SEOHead';
+import { collectionPageJsonLd } from '../utils/seo';
 import ContentCard from '../components/ContentCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Pagination from '../components/Pagination';
@@ -44,6 +45,7 @@ export default function FestivalPage() {
         title="Festival Messages in Hindi | त्योहारों की शुभकामनाएं - DoAide Shayari"
         description="दिवाली, होली, ईद, क्रिसमस, रक्षाबंधन, नवरात्रि — सभी त्योहारों की शुभकामनाएं हिंदी में। WhatsApp पर शेयर करें।"
         url="/festivals"
+        jsonLd={collectionPageJsonLd({ name: 'Festival Messages in Hindi', description: 'दिवाली, होली, ईद, क्रिसमस — सभी त्योहारों की शुभकामनाएं हिंदी में', url: '/festivals', items: data?.items || [] })}
       />
 
       <section className="bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 text-white py-10 sm:py-14 px-4">
