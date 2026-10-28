@@ -30,6 +30,14 @@ export default function App() {
           <Route path="/motivational-shayari" element={<SEOLandingPage slug="motivational-shayari" />} />
           <Route path="/birthday-wishes" element={<SEOLandingPage slug="birthday-wishes" />} />
           <Route path="/anniversary-wishes" element={<SEOLandingPage slug="anniversary-wishes" />} />
+          <Route path="/attitude-shayari" element={<SEOLandingPage slug="attitude-shayari" />} />
+          <Route path="/funny-shayari" element={<SEOLandingPage slug="funny-shayari" />} />
+          <Route path="/diwali-wishes" element={<SEOLandingPage slug="diwali-wishes" />} />
+          <Route path="/holi-wishes" element={<SEOLandingPage slug="holi-wishes" />} />
+          <Route path="/raksha-bandhan-wishes" element={<SEOLandingPage slug="raksha-bandhan-wishes" />} />
+          <Route path="/navratri-wishes" element={<SEOLandingPage slug="navratri-wishes" />} />
+          <Route path="/new-year-wishes" element={<SEOLandingPage slug="new-year-wishes" />} />
+          <Route path="/christmas-wishes" element={<SEOLandingPage slug="christmas-wishes" />} />
           <Route path="/festivals" element={<FestivalPage />} />
           <Route path="/occasion-generator" element={<OccasionGeneratorPage />} />
           <Route path="/quote-card" element={<QuoteCardPage />} />

@@ -8,6 +8,7 @@ export default function NotFoundPage() {
         title="पेज नहीं मिला | 404 - DoAide Shayari"
         description="यह पेज मौजूद नहीं है।"
         url="/404"
+        noindex
       />
       <div className="max-w-lg mx-auto px-4 py-20 text-center">
         <p className="text-5xl font-bold text-primary-500 mb-4">404</p>

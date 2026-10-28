@@ -4,6 +4,8 @@
  * h1, OG/Twitter meta, and JSON-LD into static HTML at build time.
  */
 
+import { SEO_DATA } from './src/utils/seo.js';
+
 const SITE = 'https://shayari.doaide.com';
 const SITE_NAME = 'DoAide | Shayari';
 
@@ -63,60 +65,18 @@ export const routes = {
       publisher: { '@type': 'Organization', name: 'DoAide', url: 'https://doaide.com' },
     }),
   },
-  '/good-morning-images': {
-    title: 'Good Morning Images & Wishes in Hindi | गुड मॉर्निंग शुभकामनाएं - DoAide Shayari',
-    description: 'गुड मॉर्निंग इमेज, सुप्रभात संदेश और शुभकामनाएं हिंदी में। WhatsApp पर शेयर करें। Good Morning images, wishes and messages in Hindi.',
-    h1: 'गुड मॉर्निंग इमेज और शुभकामनाएं',
-    jsonLd: collectionJsonLd({ name: 'Good Morning Images & Wishes in Hindi', description: 'गुड मॉर्निंग इमेज और सुप्रभात संदेश हिंदी में', url: '/good-morning-images' }),
-  },
-  '/good-night-images': {
-    title: 'Good Night Images & Wishes in Hindi | शुभ रात्रि संदेश - DoAide Shayari',
-    description: 'गुड नाइट इमेज, शुभ रात्रि संदेश और शुभकामनाएं हिंदी में। Good Night images and wishes in Hindi for WhatsApp.',
-    h1: 'गुड नाइट इमेज और शुभ रात्रि संदेश',
-    jsonLd: collectionJsonLd({ name: 'Good Night Images & Wishes in Hindi', description: 'गुड नाइट इमेज और शुभ रात्रि संदेश हिंदी में', url: '/good-night-images' }),
-  },
-  '/hindi-shayari': {
-    title: 'Hindi Shayari | हिंदी शायरी संग्रह - प्यार, दर्द, दोस्ती - DoAide Shayari',
-    description: 'बेहतरीन हिंदी शायरी - प्यार, दर्द, दोस्ती, एटीट्यूड शायरी। Hindi Shayari collection - Love, Sad, Friendship.',
-    h1: 'हिंदी शायरी संग्रह',
-    jsonLd: collectionJsonLd({ name: 'Hindi Shayari Collection', description: 'बेहतरीन हिंदी शायरी - प्यार, दर्द, दोस्ती, एटीट्यूड शायरी', url: '/hindi-shayari' }),
-  },
-  '/love-shayari': {
-    title: 'Love Shayari in Hindi | लव शायरी - रोमांटिक शायरी - DoAide Shayari',
-    description: 'बेहतरीन लव शायरी हिंदी में। रोमांटिक शायरी, मोहब्बत शायरी। Love Shayari, Romantic Shayari in Hindi.',
-    h1: 'लव शायरी - रोमांटिक शायरी',
-    jsonLd: collectionJsonLd({ name: 'Love Shayari in Hindi', description: 'बेहतरीन लव शायरी हिंदी में। रोमांटिक शायरी, मोहब्बत शायरी', url: '/love-shayari' }),
-  },
-  '/sad-shayari': {
-    title: 'Sad Shayari in Hindi | दर्द भरी शायरी - DoAide Shayari',
-    description: 'दर्द भरी शायरी, सैड शायरी हिंदी में। Sad Shayari, Dard Bhari Shayari in Hindi.',
-    h1: 'दर्द भरी शायरी',
-    jsonLd: collectionJsonLd({ name: 'Sad Shayari in Hindi', description: 'दर्द भरी शायरी, सैड शायरी हिंदी में', url: '/sad-shayari' }),
-  },
-  '/motivational-shayari': {
-    title: 'Motivational Shayari in Hindi | मोटिवेशनल शायरी - जोश भरी शायरी - DoAide Shayari',
-    description: 'मोटिवेशनल शायरी, जोश और हौसला बढ़ाने वाली शायरी हिंदी में। Motivational Shayari, Inspirational Shayari in Hindi.',
-    h1: 'मोटिवेशनल शायरी - हौसला बढ़ाने वाली शायरी',
-    jsonLd: collectionJsonLd({ name: 'Motivational Shayari in Hindi', description: 'मोटिवेशनल शायरी, जोश और हौसला बढ़ाने वाली शायरी हिंदी में', url: '/motivational-shayari' }),
-  },
-  '/friendship-shayari': {
-    title: 'Friendship Shayari in Hindi | दोस्ती शायरी - DoAide Shayari',
-    description: 'दोस्ती शायरी, यारी शायरी हिंदी में। Friendship Shayari, Dosti Shayari in Hindi.',
-    h1: 'दोस्ती शायरी - यारी शायरी',
-    jsonLd: collectionJsonLd({ name: 'Friendship Shayari in Hindi', description: 'दोस्ती शायरी, यारी शायरी हिंदी में', url: '/friendship-shayari' }),
-  },
-  '/birthday-wishes': {
-    title: 'Birthday Wishes in Hindi | जन्मदिन की शुभकामनाएं - DoAide Shayari',
-    description: 'जन्मदिन की शुभकामनाएं हिंदी में। Happy Birthday wishes in Hindi for WhatsApp.',
-    h1: 'जन्मदिन की शुभकामनाएं',
-    jsonLd: collectionJsonLd({ name: 'Birthday Wishes in Hindi', description: 'जन्मदिन की शुभकामनाएं हिंदी में', url: '/birthday-wishes' }),
-  },
-  '/anniversary-wishes': {
-    title: 'Anniversary Wishes in Hindi | शादी की सालगिरह - DoAide Shayari',
-    description: 'शादी की सालगिरह की शुभकामनाएं हिंदी में। Happy Anniversary wishes in Hindi.',
-    h1: 'शादी की सालगिरह की शुभकामनाएं',
-    jsonLd: collectionJsonLd({ name: 'Anniversary Wishes in Hindi', description: 'शादी की सालगिरह की शुभकामनाएं हिंदी में', url: '/anniversary-wishes' }),
-  },
+  // Landing pages share metadata with the client-side SEOLandingPage
+  ...Object.fromEntries(
+    Object.entries(SEO_DATA).map(([slug, seo]) => [
+      `/${slug}`,
+      {
+        title: seo.title,
+        description: seo.description,
+        h1: seo.h1,
+        jsonLd: collectionJsonLd({ name: seo.h1En, description: seo.description, url: `/${slug}` }),
+      },
+    ]),
+  ),
   '/festivals': {
     title: 'Festival Messages in Hindi | त्योहारों की शुभकामनाएं - DoAide Shayari',
     description: 'दिवाली, होली, ईद, क्रिसमस, रक्षाबंधन, नवरात्रि — सभी त्योहारों की शुभकामनाएं हिंदी में। WhatsApp पर शेयर करें।',

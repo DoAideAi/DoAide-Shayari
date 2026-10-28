@@ -12,6 +12,14 @@ const queryClient = new QueryClient({
   },
 })
 
+// Prerendered head tags are for crawlers without JS; SEOHead re-renders them per
+// route, so drop the static copies to avoid duplicate/stale canonicals after navigation.
+document.head
+  .querySelectorAll(
+    'title, meta[name="description"], link[rel="canonical"], meta[property^="og:"]:not([property^="og:image:"]), meta[name^="twitter:"], script[type="application/ld+json"]',
+  )
+  .forEach((el) => el.remove())
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>

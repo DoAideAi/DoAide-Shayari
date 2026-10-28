@@ -53,6 +53,46 @@ const RELATED = {
     { to: '/friendship-shayari', label: 'दोस्ती शायरी' },
     { to: '/love-shayari', label: 'लव शायरी' },
   ],
+  'attitude-shayari': [
+    { to: '/funny-shayari', label: 'फ़नी शायरी' },
+    { to: '/motivational-shayari', label: 'मोटिवेशनल शायरी' },
+    { to: '/hindi-shayari', label: 'हिंदी शायरी' },
+  ],
+  'funny-shayari': [
+    { to: '/attitude-shayari', label: 'एटीट्यूड शायरी' },
+    { to: '/friendship-shayari', label: 'दोस्ती शायरी' },
+    { to: '/hindi-shayari', label: 'हिंदी शायरी' },
+  ],
+  'diwali-wishes': [
+    { to: '/new-year-wishes', label: 'नया साल' },
+    { to: '/navratri-wishes', label: 'नवरात्रि' },
+    { to: '/festivals', label: 'सभी त्योहार' },
+  ],
+  'holi-wishes': [
+    { to: '/raksha-bandhan-wishes', label: 'रक्षाबंधन' },
+    { to: '/diwali-wishes', label: 'दिवाली' },
+    { to: '/festivals', label: 'सभी त्योहार' },
+  ],
+  'raksha-bandhan-wishes': [
+    { to: '/holi-wishes', label: 'होली' },
+    { to: '/birthday-wishes', label: 'बर्थडे विशेज' },
+    { to: '/festivals', label: 'सभी त्योहार' },
+  ],
+  'navratri-wishes': [
+    { to: '/diwali-wishes', label: 'दिवाली' },
+    { to: '/holi-wishes', label: 'होली' },
+    { to: '/festivals', label: 'सभी त्योहार' },
+  ],
+  'new-year-wishes': [
+    { to: '/christmas-wishes', label: 'क्रिसमस' },
+    { to: '/diwali-wishes', label: 'दिवाली' },
+    { to: '/festivals', label: 'सभी त्योहार' },
+  ],
+  'christmas-wishes': [
+    { to: '/new-year-wishes', label: 'नया साल' },
+    { to: '/good-morning-images', label: 'गुड मॉर्निंग' },
+    { to: '/festivals', label: 'सभी त्योहार' },
+  ],
 };
 
 export default function SEOLandingPage({ slug }) {
