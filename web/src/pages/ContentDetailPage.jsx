@@ -4,7 +4,7 @@ import SEOHead from '../components/SEOHead';
 import ContentCard from '../components/ContentCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3081';
+const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:3081';
 
 export default function ContentDetailPage() {
   const { id } = useParams();
